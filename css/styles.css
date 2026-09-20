@@ -27,10 +27,7 @@
 
 * { box-sizing: border-box; }
 
-/* overflow-x on html as well: iOS Safari is unreliable at honoring the
-   body-only clip, and any stray horizontal overflow would otherwise let
-   the page pan sideways. */
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;

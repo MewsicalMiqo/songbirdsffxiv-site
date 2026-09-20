@@ -371,7 +371,7 @@ b, strong { font-weight: 600; color: var(--cream); }
   align-items: center;
   line-height: 1.75;
   padding: 2.5rem;
-  background: var(--surface-2);
+  background: rgba(19, 26, 48, 0.55); /* surface-2 at ~55% so the page background shows through */
   border: 1px solid var(--line);
   border-radius: 1rem;
 }

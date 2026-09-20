@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Songs — The Songbirds</title>
+  <meta name="description" content="The full Songbirds setlist — anime, cinematic, classical, seasonal and more. A living songs list straight from our public list." />
+  <meta name="theme-color" content="#05060c" />
+  <link rel="icon" href="images/sb-logo-web.png" />
+  <meta property="og:title" content="Songs — The Songbirds" />
+  <meta property="og:description" content="Browse the full Songbirds setlist — a living songs list from anime and cinematic to classical and seasonal." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="screenshots/web/Songbirds.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#05060c', surface: '#0e1424', 'surface-2': '#131a30',
+            gold: { DEFAULT: '#f5c453', deep: '#d4a017' }, cream: '#f6f2e9',
+            muted: '#a6abb8', heart: '#ff2d55', line: 'rgba(245,196,83,0.16)'
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['Outfit', 'system-ui', 'sans-serif']
+          },
+          boxShadow: { card: '0 26px 64px -32px rgba(0,0,0,0.92)' }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/setlist.js"></script>
+  <script defer src="js/script.js"></script>
+  <script defer src="js/songs.js"></script>
+</head>
+<body class="font-sans">
+  <div class="aurora" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+  <!-- Nav -->
+  <header class="nav" id="nav">
+    <div class="nav-shell">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-8">
+        <a href="index.html" class="group flex items-center gap-3" aria-label="The Songbirds — home">
+          <span class="grid h-10 w-10 place-items-center transition-transform duration-300 group-hover:-rotate-6">
+            <img src="images/sb-logo-web.png" alt="The Songbirds logo" class="h-[30px] w-[30px] object-contain" />
+          </span>
+          <span class="leading-tight">
+            <span class="block font-display text-lg sm:text-xl">The Songbirds</span>
+            <span class="brand-sub hidden sm:block">FFXIV Bard Ensemble</span>
+          </span>
+        </a>
+        <nav class="hidden items-center gap-1 md:flex" aria-label="Primary">
+          <a class="navlink" href="index.html">Home</a>
+          <a class="navlink" href="about.html">About</a>
+          <a class="navlink active" href="songs.html">Songs</a>
+          <a class="btn btn-gold text-sm md:ml-3" href="hire.html">Hire us
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </nav>
+        <button class="burger md:hidden" id="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span>
+        </button>
+      </div>
+      <div class="nav-menu md:hidden" id="nav-menu">
+        <div class="flex flex-col gap-1 px-5 pb-5 pt-1 sm:px-8">
+          <a class="navlink" href="index.html">Home</a>
+          <a class="navlink" href="about.html">About</a>
+          <a class="navlink active" href="songs.html">Songs</a>
+          <a class="btn btn-gold mt-2" href="hire.html">Hire us
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+      <span class="note-float" style="left:11%; font-size:1.4rem; animation-duration:13s; --nx:30px; --rot:22deg;">&#9835;</span>
+      <span class="note-float" style="left:83%; font-size:1.7rem; animation-duration:16s; --nx:-30px; --rot:-20deg; animation-delay:2s;">&#9834;</span>
+    </div>
+    <div class="mx-auto max-w-6xl px-5 pb-12 pt-28 sm:px-8 sm:pt-32">
+      <span class="eyebrow reveal">The songs list</span>
+      <h1 class="reveal mt-5 max-w-3xl font-display text-4xl font-semibold leading-[1.05] sm:text-6xl" style="--d:.08s">Songs we play.</h1>
+      <p class="reveal mt-5 max-w-2xl text-lg text-muted" style="--d:.16s">A living setlist, straight from our public songs list. Browse the full library below — from anime and cinematic to classical, seasonal, and a few requests worth keeping.</p>
+      <dl class="reveal mt-12 grid max-w-2xl grid-cols-2 gap-4 border-t border-line pt-8 sm:gap-8" style="--d:.24s">
+        <div class="stat"><dt class="sr-only">Total songs</dt><dd class="num" id="song-total">–</dd><dd class="lbl mt-2">songs in the book</dd></div>
+        <div class="stat"><dt class="sr-only">Sections</dt><dd class="num" id="section-count">–</dd><dd class="lbl mt-2">sections</dd></div>
+      </dl>
+      <div class="reveal mt-8 flex flex-wrap items-center gap-x-5 gap-y-3" style="--d:.3s">
+        <span class="text-sm text-muted" id="song-status">Loading the songs list…</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section navigator (populated by js/songs.js) -->
+  <div class="toc-sentinel" id="toc-sentinel" aria-hidden="true"></div>
+  <nav id="setlist-nav" class="toc-bar" hidden aria-label="Setlist sections">
+    <div class="toc-row">
+      <button type="button" class="toc-arrow toc-prev" id="toc-prev" aria-label="Scroll sections left" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 19l-7-7 7-7"/></svg>
+      </button>
+      <div class="toc-scroll" id="toc-scroll"></div>
+      <button type="button" class="toc-arrow toc-next" id="toc-next" aria-label="Scroll sections right" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+    <div class="toc-progress" aria-hidden="true"><span class="toc-fade" id="toc-fade"></span></div>
+  </nav>
+
+  <!-- Setlist (populated by js/songs.js) -->
+  <div id="setlist" class="relative" aria-live="polite">
+    <div class="mx-auto w-full max-w-4xl px-5 py-16 sm:px-8 sm:py-20">
+      <div class="note reveal in">Pulling the latest setlist from our public songs list — this usually takes a second or two.</div>
+    </div>
+  </div>
+
+  <!-- Source note -->
+  <section class="py-8 sm:py-12">
+    <div class="mx-auto w-full max-w-4xl px-5 sm:px-8">
+      <div class="note reveal">
+        Looking for something not on the list? Send us a request — a surprising number of our best songs started that way. <a href="hire.html">Get in touch</a>.
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="border-t border-line bg-surface/40">
+    <div class="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-4">
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3">
+          <span class="grid h-10 w-10 place-items-center">
+            <img src="images/sb-logo-web.png" alt="The Songbirds logo" class="h-[30px] w-[30px] object-contain" />
+          </span>
+          <span class="font-display text-xl">The Songbirds</span>
+        </div>
+        <p class="mt-4 max-w-sm text-sm text-muted">A Final Fantasy XIV bard ensemble, bringing ballads and battle hymns to life since 2018.</p>
+        <div class="mt-5 flex gap-2">
+          <a class="social" href="https://discord.gg/songbirds" target="_blank" rel="noopener" aria-label="Discord"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.32 4.37A19.8 19.8 0 0 0 15.4 2.9a.07.07 0 0 0-.08.04c-.2.38-.44.87-.6 1.25a18.3 18.3 0 0 0-5.44 0 12.6 12.6 0 0 0-.62-1.25.08.08 0 0 0-.08-.04A19.74 19.74 0 0 0 3.68 4.37a.07.07 0 0 0-.04.03C.53 8.28-.32 12.04.1 15.76a.08.08 0 0 0 .03.05 19.9 19.9 0 0 0 6 3.03.08.08 0 0 0 .08-.03c.46-.63.87-1.3 1.22-2a.08.08 0 0 0-.04-.1 13.1 13.1 0 0 1-1.87-.9.08.08 0 0 1-.01-.12c.12-.17.25-.34.37-.5a.07.07 0 0 1 .1-.03 14.2 14.2 0 0 0 12.06 0 .07.07 0 0 1 .1.02c.12.16.24.33.37.5a.08.08 0 0 1-.01.13c-.6.35-1.22.64-1.87.89a.08.08 0 0 0-.04.11c.36.7.77 1.36 1.22 2a.08.08 0 0 0 .08.03 19.84 19.84 0 0 0 6-3.03.08.08 0 0 0 .04-.05c.5-4.31-.84-8.04-3.54-11.36a.06.06 0 0 0-.03-.03zM8.02 13.33c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.21 0 2.17 1.1 2.15 2.42 0 1.34-.96 2.42-2.15 2.42zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.21 0 2.17 1.1 2.15 2.42 0 1.34-.94 2.42-2.15 2.42z"/></svg></a>
+          <a class="social" href="https://www.youtube.com/@songbirdsffxiv" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.5-.45-5.17a2.78 2.78 0 0 0-1.94-1.96C18.9 4.4 12 4.4 12 4.4s-6.9 0-8.61.47A2.78 2.78 0 0 0 1.45 6.83C1 8.5 1 12 1 12s0 3.5.45 5.17a2.78 2.78 0 0 0 1.94 1.96C5.1 19.6 12 19.6 12 19.6s6.9 0 8.61-.47a2.78 2.78 0 0 0 1.94-1.96C23 15.5 23 12 23 12z"/><path d="M10 15.5v-7l6 3.5z" fill="#08080c"/></svg></a>
+          <a class="social" href="https://www.twitch.tv/" target="_blank" rel="noopener" aria-label="Twitch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 3 3 6v13h4v2h3l2-2h4l5-5V3H4z"/><path d="M14 7v5M10 7v5" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-h">Explore</p>
+        <a class="footer-link" href="about.html">About us</a>
+        <a class="footer-link" href="songs.html">The songs list</a>
+        <a class="footer-link" href="hire.html">Hire the ensemble</a>
+      </div>
+      <div>
+        <p class="footer-h">Play with us</p>
+        <p class="mt-1 text-sm text-muted">Casting for a voice? We're open to new bards across every datacenter.</p>
+        <a class="btn btn-gold mt-4" href="hire.html">Get in touch</a>
+      </div>
+    </div>
+    <div class="border-t border-line/60">
+      <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-5 py-5 text-xs text-muted sm:flex-row sm:px-8">
+        <p>© 2026 The Songbirds.</p>
+        <p class="inline-flex items-center gap-1">Made by the Songbirds with
+          <svg viewBox="0 0 24 24" fill="currentColor" class="h-3.5 w-3.5 text-heart"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.2 2 5 5.2 5 7 5 8.3 6 12 8.9 15.7 6 17 5 18.8 5 22 5 23.6 8.2 22 11.7 19.5 16.4 12 21 12 21z"/></svg>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

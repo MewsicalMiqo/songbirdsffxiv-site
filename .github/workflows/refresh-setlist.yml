@@ -1,0 +1,39 @@
+name: Refresh setlist
+
+# Keeps js/setlist.js (the offline fallback) fresh so the site always renders
+# instantly from static data, even when the live Google Sheet is unreachable.
+on:
+  schedule:
+    # Hourly. GitHub fires these with some jitter (a few minutes after the hour)
+    # and pauses them if the repo has had no pushes for ~a week.
+    - cron: '0 * * * *'
+  workflow_dispatch:
+    # Lets you trigger a refresh immediately from the Actions tab.
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Regenerate js/setlist.js from the sheet
+        # Public read-only fetch, so no token/secret is required.
+        run: node tools/regen-setlist.js
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add js/setlist.js
+          if git diff --cached --quiet; then
+            echo "Setlist unchanged - nothing to commit."
+          else
+            git commit -m "chore: refresh setlist fallback from Google Sheet"
+            git push
+          fi

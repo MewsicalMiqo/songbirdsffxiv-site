@@ -30,6 +30,7 @@ jobs:
           mkdir -p dist
           cp -r css images js screenshots dist/
           cp *.html dist/
+          [ -f CNAME ] && cp CNAME dist/ || true
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

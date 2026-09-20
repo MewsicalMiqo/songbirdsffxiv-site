@@ -27,7 +27,10 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+/* overflow-x on html as well: iOS Safari is unreliable at honoring the
+   body-only clip, and any stray horizontal overflow would otherwise let
+   the page pan sideways. */
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
 
 body {
   margin: 0;
@@ -587,6 +590,11 @@ b, strong { font-weight: 600; color: var(--cream); }
   height: 2px;
   background: rgba(255, 255, 255, 0.08);
   pointer-events: none;
+  /* Keep the gold thumb inside the rail. .toc-fade is 96px wide and
+     slides to left:100%, so without this clip its right half hangs past
+     the bar's edge and widens the page — on mobile (iOS especially) the
+     whole layout can then pan sideways and fall apart. */
+  overflow: hidden;
 }
 .toc-fade {
   position: absolute;

@@ -155,13 +155,25 @@
         }
       }
       var active = chips[i];
-      if (doScroll && active && typeof active.scrollIntoView === "function") {
+      if (doScroll && active && scrollEl) {
         var reduce = false;
         try {
           reduce = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
         } catch (err) { reduce = false; }
         try {
-          active.scrollIntoView({ inline: "center", block: "nearest", behavior: reduce ? "auto" : "smooth" });
+          // Center the chip inside the chip row only. Element.scrollIntoView
+          // would also ask the document to scroll, and on mobile that pans
+          // the whole page sideways and breaks the layout, so compute the
+          // target offset against the scroller ourselves.
+          var chipRect = active.getBoundingClientRect();
+          var rowRect = scrollEl.getBoundingClientRect();
+          var target = scrollEl.scrollLeft + (chipRect.left - rowRect.left) - (scrollEl.clientWidth - active.offsetWidth) / 2;
+          target = Math.max(0, target);
+          if (typeof scrollEl.scrollTo === "function") {
+            scrollEl.scrollTo({ left: target, behavior: reduce ? "auto" : "smooth" });
+          } else {
+            scrollEl.scrollLeft = target;
+          }
         } catch (err) {}
       }
     }

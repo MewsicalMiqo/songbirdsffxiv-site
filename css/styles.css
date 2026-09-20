@@ -378,6 +378,15 @@ b, strong { font-weight: 600; color: var(--cream); }
 }
 /* Story paragraphs — open up the leading so the text blocks balance the 16:10 image frames */
 .story-grid p { line-height: 1.75; }
+/* Story divider — bird-and-hairline separator under the "Our story" title */
+.story-divider {
+  display: block;
+  width: 240px;
+  max-width: 62%;
+  height: auto;
+  margin: 1.25rem auto 0;
+  filter: drop-shadow(0 0 8px rgba(245, 196, 83, 0.28));
+}
 
 .spotlight-visual { position: relative; }
 .spotlight-photo {

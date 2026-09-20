@@ -365,8 +365,24 @@ b, strong { font-weight: 600; color: var(--cream); }
 /* Staggered story frames — start the pan & zoom once the frame scrolls into view */
 .reveal .gallery picture { animation-play-state: paused; }
 .reveal.in .gallery picture { animation-play-state: running; }
+/* Story paragraphs — open up the leading; panels match the image frames (same radius, border, surface) */
+.story-grid p {
+  display: flex;
+  align-items: center;
+  line-height: 1.75;
+  padding: 2.5rem;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+}
+.story-grid p:hover {
+  border-color: rgba(245, 196, 83, 0.4);
+  box-shadow: var(--shadow);
+}
 /* Mobile story: strict image/text alternation (single column only — desktop zigzag untouched) */
 @media (max-width: 1023px) {
+  .story-grid { max-width: 44rem; margin-inline: auto; }
+  .story-grid p { padding: 2rem; }
   .story-grid > :nth-child(1) { order: 1; } /* image — Songbirds */
   .story-grid > :nth-child(2) { order: 2; } /* paragraph 1 */
   .story-grid > :nth-child(3) { order: 4; } /* paragraph 2 */
@@ -376,8 +392,6 @@ b, strong { font-weight: 600; color: var(--cream); }
   .story-grid > :nth-child(7) { order: 8; } /* paragraph 4 */
   .story-grid > :nth-child(8) { order: 7; } /* image — Talim */
 }
-/* Story paragraphs — open up the leading so the text blocks balance the 16:10 image frames */
-.story-grid p { line-height: 1.75; }
 /* Story divider — bird-and-hairline separator under the "Our story" title */
 .story-divider {
   display: block;

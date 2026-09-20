@@ -365,6 +365,17 @@ b, strong { font-weight: 600; color: var(--cream); }
 /* Staggered story frames — start the pan & zoom once the frame scrolls into view */
 .reveal .gallery picture { animation-play-state: paused; }
 .reveal.in .gallery picture { animation-play-state: running; }
+/* Mobile story: strict image/text alternation (single column only — desktop zigzag untouched) */
+@media (max-width: 1023px) {
+  .story-grid > :nth-child(1) { order: 1; } /* image — Songbirds */
+  .story-grid > :nth-child(2) { order: 2; } /* paragraph 1 */
+  .story-grid > :nth-child(3) { order: 4; } /* paragraph 2 */
+  .story-grid > :nth-child(4) { order: 3; } /* image — Sakis Wonderland #1 */
+  .story-grid > :nth-child(5) { order: 5; } /* image — Sakis Wonderland #2 */
+  .story-grid > :nth-child(6) { order: 6; } /* paragraph 3 */
+  .story-grid > :nth-child(7) { order: 8; } /* paragraph 4 */
+  .story-grid > :nth-child(8) { order: 7; } /* image — Talim */
+}
 
 .spotlight-visual { position: relative; }
 .spotlight-photo {

@@ -376,6 +376,8 @@ b, strong { font-weight: 600; color: var(--cream); }
   .story-grid > :nth-child(7) { order: 8; } /* paragraph 4 */
   .story-grid > :nth-child(8) { order: 7; } /* image — Talim */
 }
+/* Story paragraphs — open up the leading so the text blocks balance the 16:10 image frames */
+.story-grid p { line-height: 1.75; }
 
 .spotlight-visual { position: relative; }
 .spotlight-photo {

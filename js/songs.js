@@ -318,7 +318,7 @@
       if (!sections.length) throw new Error("empty");
       render(sections);
       var n = sections.reduce(function (a, s) { return a + s.songs.length; }, 0);
-      setStatus("Loaded " + n + " songs from our public songs list.");
+      setStatus("Loaded " + n + " entries from our public songs list.");
     }).catch(function () {
       if (window.__SETLIST_CSV) {
         var sections = parseCsv(window.__SETLIST_CSV);

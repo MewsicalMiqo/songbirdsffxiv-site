@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Songs — The Songbirds</title>
-  <meta name="description" content="The full Songbirds setlist — anime, cinematic, classical, seasonal and more. A living songs list straight from our public list." />
+  <title>Songs - The Songbirds</title>
+  <meta name="description" content="The full setlist from our public Google Sheets." />
   <meta name="theme-color" content="#05060c" />
   <link rel="icon" href="images/sb-logo-web.png" />
-  <meta property="og:title" content="Songs — The Songbirds" />
-  <meta property="og:description" content="Browse the full Songbirds setlist — a living songs list from anime and cinematic to classical and seasonal." />
+  <meta property="og:title" content="Songs - The Songbirds" />
+  <meta property="og:description" content="Browse our full repertoire." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="screenshots/web/Songbirds.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -61,7 +61,7 @@
           <a class="navlink" href="index.html">Home</a>
           <a class="navlink" href="about.html">About</a>
           <a class="navlink active" href="songs.html">Songs</a>
-          <a class="btn btn-gold text-sm md:ml-3" href="hire.html">Hire us
+          <a class="btn btn-gold text-sm md:ml-3" href="hire.html">Book a show
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
         </nav>
@@ -74,7 +74,7 @@
           <a class="navlink" href="index.html">Home</a>
           <a class="navlink" href="about.html">About</a>
           <a class="navlink active" href="songs.html">Songs</a>
-          <a class="btn btn-gold mt-2" href="hire.html">Hire us
+          <a class="btn btn-gold mt-2" href="hire.html">Book us
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
         </div>
@@ -89,14 +89,14 @@
     </div>
     <div class="mx-auto max-w-6xl px-5 pb-12 pt-28 sm:px-8 sm:pt-32">
       <span class="eyebrow reveal">The songs list</span>
-      <h1 class="reveal mt-5 max-w-3xl font-display text-4xl font-semibold leading-[1.05] sm:text-6xl" style="--d:.08s">Songs we play.</h1>
-      <p class="reveal mt-5 max-w-2xl text-lg text-muted" style="--d:.16s">A living setlist, straight from our public songs list. Browse the full library below — from anime and cinematic to classical, seasonal, and a few requests worth keeping.</p>
+      <h1 class="reveal mt-5 max-w-3xl font-display text-4xl font-semibold leading-[1.05] sm:text-6xl" style="--d:.08s">Dami dami damio, sing the song we used to know</h1>
+      <p class="reveal mt-5 max-w-2xl text-lg text-muted" style="--d:.16s">The full repertoire from our public Google Sheets. Browse the full collection below.</p>
       <dl class="reveal mt-12 grid max-w-2xl grid-cols-2 gap-4 border-t border-line pt-8 sm:gap-8" style="--d:.24s">
-        <div class="stat"><dt class="sr-only">Total songs</dt><dd class="num" id="song-total">–</dd><dd class="lbl mt-2">songs in the book</dd></div>
-        <div class="stat"><dt class="sr-only">Sections</dt><dd class="num" id="section-count">–</dd><dd class="lbl mt-2">sections</dd></div>
+        <div class="stat"><dt class="sr-only">Total songs</dt><dd class="num" id="song-total">–</dd><dd class="lbl mt-2">songs in the repertoire</dd></div>
+        <div class="stat"><dt class="sr-only">Sections</dt><dd class="num" id="section-count">–</dd><dd class="lbl mt-2">categories</dd></div>
       </dl>
       <div class="reveal mt-8 flex flex-wrap items-center gap-x-5 gap-y-3" style="--d:.3s">
-        <span class="text-sm text-muted" id="song-status">Loading the songs list…</span>
+        <span class="text-sm text-muted" id="song-status">Querying Google Sheets for updated entries…</span>
       </div>
     </div>
   </section>
@@ -127,7 +127,7 @@
   <section class="py-8 sm:py-12">
     <div class="mx-auto w-full max-w-4xl px-5 sm:px-8">
       <div class="note reveal">
-        Looking for something not on the list? Send us a request — a surprising number of our best songs started that way. <a href="hire.html">Get in touch</a>.
+        Want to suggest a song? Just let me know on Discord, I'm always open to suggestions!
       </div>
     </div>
   </section>
@@ -141,28 +141,28 @@
           </span>
           <span class="font-display text-xl">The Songbirds</span>
         </div>
-        <p class="mt-4 max-w-sm text-sm text-muted">A Final Fantasy XIV bard ensemble, bringing ballads and battle hymns to life since 2018.</p>
+        <p class="mt-4 max-w-sm text-sm text-muted">A Final Fantasy XIV bard ensemble, bringing magic of music to Eorzea since 2018.</p>
         <div class="mt-5 flex gap-2">
-          <a class="social" href="https://discord.gg/songbirds" target="_blank" rel="noopener" aria-label="Discord"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.32 4.37A19.8 19.8 0 0 0 15.4 2.9a.07.07 0 0 0-.08.04c-.2.38-.44.87-.6 1.25a18.3 18.3 0 0 0-5.44 0 12.6 12.6 0 0 0-.62-1.25.08.08 0 0 0-.08-.04A19.74 19.74 0 0 0 3.68 4.37a.07.07 0 0 0-.04.03C.53 8.28-.32 12.04.1 15.76a.08.08 0 0 0 .03.05 19.9 19.9 0 0 0 6 3.03.08.08 0 0 0 .08-.03c.46-.63.87-1.3 1.22-2a.08.08 0 0 0-.04-.1 13.1 13.1 0 0 1-1.87-.9.08.08 0 0 1-.01-.12c.12-.17.25-.34.37-.5a.07.07 0 0 1 .1-.03 14.2 14.2 0 0 0 12.06 0 .07.07 0 0 1 .1.02c.12.16.24.33.37.5a.08.08 0 0 1-.01.13c-.6.35-1.22.64-1.87.89a.08.08 0 0 0-.04.11c.36.7.77 1.36 1.22 2a.08.08 0 0 0 .08.03 19.84 19.84 0 0 0 6-3.03.08.08 0 0 0 .04-.05c.5-4.31-.84-8.04-3.54-11.36a.06.06 0 0 0-.03-.03zM8.02 13.33c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.21 0 2.17 1.1 2.15 2.42 0 1.34-.96 2.42-2.15 2.42zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.21 0 2.17 1.1 2.15 2.42 0 1.34-.94 2.42-2.15 2.42z"/></svg></a>
+          <a class="social" href="https://discord.gg/mewmiverse" target="_blank" rel="noopener" aria-label="Discord"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.32 4.37A19.8 19.8 0 0 0 15.4 2.9a.07.07 0 0 0-.08.04c-.2.38-.44.87-.6 1.25a18.3 18.3 0 0 0-5.44 0 12.6 12.6 0 0 0-.62-1.25.08.08 0 0 0-.08-.04A19.74 19.74 0 0 0 3.68 4.37a.07.07 0 0 0-.04.03C.53 8.28-.32 12.04.1 15.76a.08.08 0 0 0 .03.05 19.9 19.9 0 0 0 6 3.03.08.08 0 0 0 .08-.03c.46-.63.87-1.3 1.22-2a.08.08 0 0 0-.04-.1 13.1 13.1 0 0 1-1.87-.9.08.08 0 0 1-.01-.12c.12-.17.25-.34.37-.5a.07.07 0 0 1 .1-.03 14.2 14.2 0 0 0 12.06 0 .07.07 0 0 1 .1.02c.12.16.24.33.37.5a.08.08 0 0 1-.01.13c-.6.35-1.22.64-1.87.89a.08.08 0 0 0-.04.11c.36.7.77 1.36 1.22 2a.08.08 0 0 0 .08.03 19.84 19.84 0 0 0 6-3.03.08.08 0 0 0 .04-.05c.5-4.31-.84-8.04-3.54-11.36a.06.06 0 0 0-.03-.03zM8.02 13.33c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.21 0 2.17 1.1 2.15 2.42 0 1.34-.96 2.42-2.15 2.42zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.21 0 2.17 1.1 2.15 2.42 0 1.34-.94 2.42-2.15 2.42z"/></svg></a>
           <a class="social" href="https://www.youtube.com/@songbirdsffxiv" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.5-.45-5.17a2.78 2.78 0 0 0-1.94-1.96C18.9 4.4 12 4.4 12 4.4s-6.9 0-8.61.47A2.78 2.78 0 0 0 1.45 6.83C1 8.5 1 12 1 12s0 3.5.45 5.17a2.78 2.78 0 0 0 1.94 1.96C5.1 19.6 12 19.6 12 19.6s6.9 0 8.61-.47a2.78 2.78 0 0 0 1.94-1.96C23 15.5 23 12 23 12z"/><path d="M10 15.5v-7l6 3.5z" fill="#08080c"/></svg></a>
-          <a class="social" href="https://www.twitch.tv/" target="_blank" rel="noopener" aria-label="Twitch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 3 3 6v13h4v2h3l2-2h4l5-5V3H4z"/><path d="M14 7v5M10 7v5" stroke-linecap="round"/></svg></a>
+          <a class="social" href="https://www.twitch.tv/songbirdsffxiv" target="_blank" rel="noopener" aria-label="Twitch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 3 3 6v13h4v2h3l2-2h4l5-5V3H4z"/><path d="M14 7v5M10 7v5" stroke-linecap="round"/></svg></a>
         </div>
       </div>
       <div>
-        <p class="footer-h">Explore</p>
-        <a class="footer-link" href="about.html">About us</a>
-        <a class="footer-link" href="songs.html">The songs list</a>
-        <a class="footer-link" href="hire.html">Hire the ensemble</a>
+        <p class="footer-h">Explore</p><hr class="w-16 mx-left my-2 border-t-1 border-gray-300">
+        <a class="footer-link" href="about.html">About us</a><br>
+        <a class="footer-link" href="songs.html">Our songs list</a><br>
+        <a class="footer-link" href="hire.html">Book a show</a>
       </div>
       <div>
-        <p class="footer-h">Play with us</p>
-        <p class="mt-1 text-sm text-muted">Casting for a voice? We're open to new bards across every datacenter.</p>
-        <a class="btn btn-gold mt-4" href="hire.html">Get in touch</a>
+        <p class="footer-h">Donate</p></p><hr class="w-16 mx-left my-2 border-t-1 border-gray-300">
+        <p class="mt-1 text-sm text-muted">Donations are greatly appreciated and help support our activities!</p>
+        <a class="btn btn-gold mt-4" href="https://streamelements.com/mewsicalmiqo/tip" target="_blank" rel="noopener" aria-label="StreamElements Tip">Tip a Miqo</a>
       </div>
     </div>
     <div class="border-t border-line/60">
       <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-5 py-5 text-xs text-muted sm:flex-row sm:px-8">
-        <p>© 2026 The Songbirds.</p>
+        <p>© 2026 The Songbirds. A fan site - Not affiliated with Square Enix.</p>
         <p class="inline-flex items-center gap-1">Made by the Songbirds with
           <svg viewBox="0 0 24 24" fill="currentColor" class="h-3.5 w-3.5 text-heart"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.2 2 5 5.2 5 7 5 8.3 6 12 8.9 15.7 6 17 5 18.8 5 22 5 23.6 8.2 22 11.7 19.5 16.4 12 21 12 21z"/></svg>
         </p>

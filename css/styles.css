@@ -362,6 +362,9 @@ b, strong { font-weight: 600; color: var(--cream); }
 @media (prefers-reduced-motion: reduce) {
   .gallery picture, .gallery picture.kb-a, .gallery picture.kb-b, .gallery picture.kb-c, .gallery picture.kb-d { animation: none; transform: none; }
 }
+/* Staggered story frames — start the pan & zoom once the frame scrolls into view */
+.reveal .gallery picture { animation-play-state: paused; }
+.reveal.in .gallery picture { animation-play-state: running; }
 
 .spotlight-visual { position: relative; }
 .spotlight-photo {

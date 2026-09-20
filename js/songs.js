@@ -280,7 +280,7 @@
       html += '<h2 class="reveal mt-4 font-display text-3xl sm:text-4xl" style="--d:.06s">' + esc(s.name) + "</h2>";
       html += '<div class="songlist" role="list">';
       s.songs.forEach(function (song, i) {
-        var d = (Math.min(i, 14) * 0.03).toFixed(2);
+        var d = (Math.min(i, 10) * 0.025).toFixed(3);
         html += '<div class="song reveal" role="listitem" style="--d:' + d + 's">';
         html += '<span class="idx">' + pad(i + 1) + "</span>";
         html += '<span class="name">' + esc(song.title) + "</span>";

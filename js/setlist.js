@@ -539,3 +539,4 @@ Commissions,
 Cjbeards - Fire and Thunder [6.55],0:13:01
 Dreamshade & Zardonic - Grey Days (Peace of Mind Mix) [6.4],0:13:02
 Inchaos - Butterfly Effect [6.3],0:13:03`;
+// temporary pipeline validation line (auto-removed by the next setlist refresh)

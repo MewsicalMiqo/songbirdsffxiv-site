@@ -43,7 +43,7 @@ Weathering With You - Celebration feat RADWIMPS [6.1],0:01:39
 Weathering With You - Fireworks Festival [5.4],0:01:40
 Weathering With You - Grand Escape [5.4],0:01:41
 ,
-Movies/Cinematic,
+Cinema,
 Aladdin - Arabian Nights [6.0],0:02:01
 Buffy the Vampire Slayer Theme [6.0],0:02:02
 Frozen - Let It Go [5.4],0:02:03
@@ -334,7 +334,7 @@ Vanessa Williams - Save the Best for Last [5.4],0:07:48
 Vangelis - Chariots of Fire [5.4],0:07:49
 Wiz Khalifa - See You Again ft. Charlie Puth [6.1],0:07:50
 ,
-Video Game Music,
+VGM,
 Animal Crossing New Leaf - Bubblegum KK [5.4],0:08:01
 Castlevania II - Bloody Tears (Day Theme) [6.48],0:08:02
 Casey Edwards ft. Victor Borba - Bury The Light (DMC5 Vergil's Theme) [6.35],0:08:03
@@ -535,7 +535,7 @@ Monster Mash [6.21],0:12:07
 Psycho Title Theme [5.4],0:12:08
 This Is Halloween [5.4],0:12:09
 ,
-Song Commissions,
+Commissions,
 Cjbeards - Fire and Thunder [6.55],0:13:01
 Dreamshade & Zardonic - Grey Days (Peace of Mind Mix) [6.4],0:13:02
 Inchaos - Butterfly Effect [6.3],0:13:03`;

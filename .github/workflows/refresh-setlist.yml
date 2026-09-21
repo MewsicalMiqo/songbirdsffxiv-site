@@ -16,9 +16,11 @@ permissions:
   contents: write
 
 # Serialize with the deploy workflow — both publish to the same Pages site.
+# cancel-in-progress stays OFF here so a refresh never cancels a user's
+# in-progress deploy (it waits its turn, then no-ops if the setlist is unchanged).
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   refresh:
@@ -59,6 +61,7 @@ jobs:
             git commit -m "chore: refresh setlist fallback from Google Sheet"
             git push
             echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
 
       # Publish to GitHub Pages. The working tree already contains the fresh
       # setlist.js, so the site updates in the same run as the refresh.

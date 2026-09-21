@@ -405,7 +405,7 @@ b, strong { font-weight: 600; color: var(--cream); }
 .spotlight-visual { position: relative; }
 .spotlight-photo {
   position: relative;
-  max-width: 420px; /* the spotlight clip is portrait — keep a phone-shaped frame */
+  max-width: 360px; /* the spotlight clip is portrait — keep a phone-shaped frame */
   margin-inline: auto;
   border-radius: 1.25rem;
   overflow: hidden;

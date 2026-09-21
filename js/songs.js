@@ -45,6 +45,17 @@
     return out;
   }
   function isDuration(v) { return /^\d+:\d{1,2}(:\d{2})?$/.test(v); }
+  function fmtDur(dur) {
+    // The sheet stores durations as h:mm:ss (e.g. "0:01:01"); display as mm:ss ("1:01").
+    // Anything unrecognized passes through untouched.
+    var parts = String(dur).trim().split(":");
+    var m, s;
+    if (parts.length === 3) { m = +parts[0] * 60 + +parts[1]; s = +parts[2]; }
+    else if (parts.length === 2) { m = +parts[0]; s = +parts[1]; }
+    else return String(dur);
+    if (!isFinite(m) || !isFinite(s) || m < 0 || s < 0 || s > 59) return String(dur);
+    return m + ":" + pad(s);
+  }
 
   function parseCsv(csv) {
     var sections = [], current = null;
@@ -296,7 +307,7 @@
         html += '<div class="song reveal" role="listitem" style="--d:' + d + 's">';
         html += '<span class="idx">' + pad(i + 1) + "</span>";
         html += '<span class="name">' + esc(song.title) + "</span>";
-        html += '<span class="dur">' + (song.dur ? esc(song.dur) : "") + "</span>";
+        html += '<span class="dur">' + (song.dur ? esc(fmtDur(song.dur)) : "") + "</span>";
         html += "</div>";
       });
       html += "</div></div></section>";

@@ -15,9 +15,24 @@ on:
 permissions:
   contents: write
 
+# Serialize with the deploy workflow — both publish to the same Pages site.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    # A push by the github-actions bot does NOT trigger the deploy workflow
+    # (GitHub suppresses bot-push triggers to prevent loops), so when the
+    # setlist changes, this job publishes the site itself.
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -32,13 +47,40 @@ jobs:
         run: node tools/regen-setlist.js
 
       - name: Commit if changed
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add js/setlist.js
           if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "Setlist unchanged - nothing to commit."
           else
             git commit -m "chore: refresh setlist fallback from Google Sheet"
             git push
-          fi
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      # Publish to GitHub Pages. The working tree already contains the fresh
+      # setlist.js, so the site updates in the same run as the refresh.
+      - name: Collect public site files
+        if: steps.commit.outputs.changed == 'true'
+        run: |
+          mkdir -p dist
+          cp -r css images js screenshots dist/
+          cp *.html dist/
+          [ -f CNAME ] && cp CNAME dist/ || true
+
+      - name: Configure Pages
+        if: steps.commit.outputs.changed == 'true'
+        uses: actions/configure-pages@v5
+
+      - name: Upload site artifact
+        if: steps.commit.outputs.changed == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy to GitHub Pages
+        if: steps.commit.outputs.changed == 'true'
+        id: deploy
+        uses: actions/deploy-pages@v4

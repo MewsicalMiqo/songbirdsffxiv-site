@@ -348,10 +348,10 @@ b, strong { font-weight: 600; color: var(--cream); }
 }
 .gallery picture img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .gallery picture.is-active { opacity: 1; }
-.gallery picture.kb-a { animation: kb-a 7.5s ease-in-out both; }
-.gallery picture.kb-b { animation: kb-b 7.5s ease-in-out both; }
-.gallery picture.kb-c { animation: kb-c 7.5s ease-in-out both; }
-.gallery picture.kb-d { animation: kb-d 7.5s ease-in-out both; }
+.gallery picture.kb-a { animation: kb-a 7.5s ease-in-out infinite alternate; }
+.gallery picture.kb-b { animation: kb-b 7.5s ease-in-out infinite alternate; }
+.gallery picture.kb-c { animation: kb-c 7.5s ease-in-out infinite alternate; }
+.gallery picture.kb-d { animation: kb-d 7.5s ease-in-out infinite alternate; }
 @keyframes kb-a { from { transform: scale(1.12) translate(1.6%, 1.2%); } to { transform: scale(1.03) translate(-0.8%, -0.6%); } }
 @keyframes kb-b { from { transform: scale(1.03); } to { transform: scale(1.13) translate(-1.8%, -1.2%); } }
 @keyframes kb-c { from { transform: scale(1.1) translate(2.2%, 0.6%); } to { transform: scale(1.1) translate(-2.2%, -0.6%); } }

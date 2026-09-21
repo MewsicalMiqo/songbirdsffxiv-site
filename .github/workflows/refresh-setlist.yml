@@ -10,6 +10,11 @@ on:
   workflow_dispatch:
     # Lets you trigger a refresh immediately from the Actions tab.
 
+# The repo's Actions default is read-only, so declare write access explicitly —
+# the GITHUB_TOKEN needs it to commit + push the updated setlist to main.
+permissions:
+  contents: write
+
 jobs:
   refresh:
     runs-on: ubuntu-latest

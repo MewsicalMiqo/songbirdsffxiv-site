@@ -4,9 +4,11 @@ name: Refresh setlist
 # instantly from static data, even when the live Google Sheet is unreachable.
 on:
   schedule:
-    # Hourly. GitHub fires these with some jitter (a few minutes after the hour)
-    # and pauses them if the repo has had no pushes for ~a week.
-    - cron: '0 * * * *'
+    # Monthly (00:00 UTC on the 1st). GitHub fires these with some jitter
+    # (a few minutes after the scheduled time) and pauses scheduled runs if
+    # the repo has had no pushes for ~a week — manual workflow_dispatch
+    # always works.
+    - cron: '0 0 1 * *'
   workflow_dispatch:
     # Lets you trigger a refresh immediately from the Actions tab.
 
